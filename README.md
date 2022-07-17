@@ -4,6 +4,8 @@
 
 Everything is 100% Open Source and licensed under the [MIT](LICENSE).
 
+All modules created with this [awesome blueprint](https://github.com/terraform-module/terraform-module-blueprint).
+
 [![Modules][logo]][website]
 
 ## Modules
