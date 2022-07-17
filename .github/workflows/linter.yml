@@ -8,6 +8,8 @@ on:
       - main
       - master
   workflow_dispatch:
+  schedule:
+    - cron: "*/10 * * * *"
 
 jobs:
   terraform-validate:
@@ -33,20 +35,3 @@ jobs:
 
       - name: terraform validate
         run: terraform validate
-
-  tflint:
-    name: "tflint"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/cache@v3
-        name: Cache tflint plugin dir
-        with:
-          path: ~/.tflint.d/plugins
-          key: ${{ matrix.os }}-tflint-${{ hashFiles('.tflint.hcl') }}
-      - uses: terraform-linters/setup-tflint@v2
-        name: setup tflint
-      - name: init tflint
-        run: tflint --init --config .tflint.hcl
-      - name: run tflint
-        run: tflint -f compact --config .tflint.hcl
