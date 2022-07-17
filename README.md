@@ -1,5 +1,6 @@
 # Module Blueprint
 
+[Terraform modules](https://registry.terraform.io/namespaces/terraform-module)
 
 Everything is 100% Open Source and licensed under the [MIT](LICENSE).
 
@@ -25,20 +26,15 @@ Everything is 100% Open Source and licensed under the [MIT](LICENSE).
 | [Cloudfront CDN][cloudfront.module]| [git](cloudfront.git)     | Terraform AWS Cloudfront.
 | [ACM][aws-acm.module]              | [git](aws-acm.git)        | Terraform AWS ACM module.
 | [DNS][aws-dns.module]              | [git](aws-dns.git)        | AWS DNS setup .
+|           **Kubernetes**           |
+| [Helm][helm.module]                | [git](helm.git)           | App release with terraform and helm.
+| [Velero][helm-velero.module]       | [git](helm-velero.git)    | Deploy velero to kubernetes.
 
 # Authors
 
 Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) and these [awesome contributors](https://github.com/terraform-module/terraform-module-blueprint/graphs/contributors).
 
 [![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/)
-
-## Terraform Registry
-
-- [Module](https://registry.terraform.io/modules/terraform-module/todo/aws)
-
-## Resources
-
-- [Terraform modules](https://registry.terraform.io/namespaces/terraform-module)
 
 [logo]: assets/open-source-modules.svg
 [website]: https://github.com/orgs/terraform-module/repositories
@@ -75,3 +71,9 @@ Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) a
 
 [aws-dns.module]: https://registry.terraform.io/modules/terraform-module/dns/aws/latest
 [aws-dns.git]: https://github.com/terraform-module/terraform-aws-dns
+
+[helm-velero.module]: https://registry.terraform.io/modules/terraform-module/velero/kubernetes/latest
+[helm-velero.git]: https://github.com/terraform-module/terraform-kubernetes-velero
+
+[helm.module]: https://registry.terraform.io/modules/terraform-module/release/helm/latest
+[helm.git]: https://github.com/terraform-module/terraform-helm-release

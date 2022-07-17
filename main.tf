@@ -63,3 +63,16 @@ module "dns" {
   source  = "terraform-module/dns/aws"
   # insert the 3 required variables here
 }
+
+# HElm provider. Not a great idea to use it. Helm is way better
+
+module "helm-release" {
+  source  = "terraform-module/release/helm"
+  # insert the 3 required variables here
+}
+
+module "velero" {
+  source  = "terraform-module/velero/kubernetes"
+  # insert the 5 required variables here
+}
+
