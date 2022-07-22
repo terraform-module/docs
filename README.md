@@ -13,24 +13,25 @@ All modules created with this [awesome blueprint](https://github.com/terraform-m
 | **Module**                        |    **Git Location**      | **Description**                    |
 |:---------------------------------- |:--------------------------|:-----------------------------------|
 |           **ECS**                  |
-| [ECS][ecs.module]                  | [git](ecs.git)            | Terraform module which creates AWS ECS resources.
-| [ECS Bootstrap][ecs-boot.module]   | [git](ecs-boot.git)       | Terraform AWS ECS services bootstrap module.
-| [ECR(s)][ecrs.module]              | [git](ecrs.git)           | Terraform module which creates AWS ECR resources.
-| [ECS Profile][ecs-prof.module]      | [git](ecs-prof.git)       | Terraform AWS ECS instance profile.
+| [ECS][ecs.module]                  | [git][ecs.git]            | Terraform module which creates AWS ECS resources.
+| [ECS Bootstrap][ecs-boot.module]   | [git][ecs-boot.git]       | Terraform AWS ECS services bootstrap module.
+| [ECR(s)][ecrs.module]              | [git][ecrs.git)           | Terraform module which creates AWS ECR resources.
+| [ECS Profile][ecs-prof.module]      | [git][ecs-prof.git)       | Terraform AWS ECS instance profile.
 |           **Serverless**           |
-| [Lambda][lambda.module]            | [git](lambda.git)         | Deploy serverless function to AWS VPC.
+| [Lambda][lambda.module]            | [git][lambda.git]         | Deploy serverless function to AWS VPC.
 |           **IAM**                  |
-| [Enforce MFA][mfa.module]          | [git](mfa.git)            | Terraform module which creates AWS ECR resources.
+| [Enforce MFA][mfa.module]          | [git][mfa.git]            | Terraform module which creates AWS ECR resources.
 |           **OIDC**                 |
-| [OIDC GIT][oidc-git.module]        | [git](oidc-git.git)       | Fully configurable terraform module to access AWS APIs from Github Actions through OpenID Connect.
-| [OIDC GITLAB][oidc-gitlab.module]  | [git](oidc-gitlab.git)    | Fully configurable terraform module to access AWS APIs from Gitlab through. OpenID Connect.
+| [OIDC GIT][oidc-git.module]        | [git][oidc-git.git]       | Fully configurable terraform module to access AWS APIs from Github Actions through OpenID Connect.
+| [OIDC GITLAB][oidc-gitlab.module]  | [git][oidc-gitlab.git]    | Fully configurable terraform module to access AWS APIs from Gitlab through. OpenID Connect.
 |           **General**              |
-| [Cloudfront CDN][cloudfront.module]| [git](cloudfront.git)     | Terraform AWS Cloudfront.
-| [ACM][aws-acm.module]              | [git](aws-acm.git)        | Terraform AWS ACM module.
-| [DNS][aws-dns.module]              | [git](aws-dns.git)        | AWS DNS setup .
+| [Cloudfront CDN][cloudfront.module]| [git][cloudfront.git]     | Terraform AWS Cloudfront.
+| [ACM][aws-acm.module]              | [git][aws-acm.git]        | Terraform AWS ACM module.
+| [DNS][aws-dns.module]              | [git][aws-dns.git]        | AWS DNS setup .
+| [KMS][aws-kms.module]              | [git][aws-kms.git]        | Create KMS .
 |           **Kubernetes**           |
-| [Helm][helm.module]                | [git](helm.git)           | App release with terraform and helm.
-| [Velero][helm-velero.module]       | [git](helm-velero.git)    | Deploy velero to kubernetes.
+| [Helm][helm.module]                | [git][helm.git]           | App release with terraform and helm.
+| [Velero][helm-velero.module]       | [git][helm-velero.git]    | Deploy velero to kubernetes.
 
 # Authors
 
@@ -79,3 +80,6 @@ Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) a
 
 [helm.module]: https://registry.terraform.io/modules/terraform-module/release/helm/latest
 [helm.git]: https://github.com/terraform-module/terraform-helm-release
+
+[aws-kms.module]: https://github.com/terraform-module/terraform-aws-kms
+[aws-kms.git]: https://registry.terraform.io/modules/terraform-module/kms/aws

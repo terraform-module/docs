@@ -64,6 +64,15 @@ module "dns" {
   # insert the 3 required variables here
 }
 
+module "kms" {
+  source  = "terraform-module/dns/aws"
+  
+  alias_name              = "parameter_store_key"
+  description             = "Key to encrypt and decrypt secrets"
+
+  tags = map("USED_BY", "chamber"))
+}
+
 # HElm provider. Not a great idea to use it. Helm is way better
 
 module "helm-release" {
