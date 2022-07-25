@@ -1,5 +1,5 @@
 module "ecrs" {
-  source  = "terraform-module/ecr/aws"
+  source  = "terraform-module/ecrs/aws"
 
   ecrs = {
     api = {
