@@ -1,5 +1,5 @@
 module "ecrs" {
-  source  = "terraform-module/ecrs/aws"
+  source  = "terraform-module/ecr/aws"
 
   ecrs = {
     api = {
@@ -66,11 +66,11 @@ module "dns" {
 
 module "kms" {
   source  = "terraform-module/dns/aws"
-  
+
   alias_name              = "parameter_store_key"
   description             = "Key to encrypt and decrypt secrets"
 
-  tags = map("USED_BY", "chamber"))
+  tags = map("USED_BY", "chamber")
 }
 
 # HElm provider. Not a great idea to use it. Helm is way better
