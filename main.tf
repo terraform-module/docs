@@ -49,7 +49,7 @@ module "lambda" {
   function_name = "example"
   handler       = "index.handler"
   memory_size   = "128"
-  filename       = "lambda.zip"
+  filename      = "lambda.zip"
   description   = "example"
   role_arn      = "arn:aws:lambda:us-east-1:123456789012:function:example_lambda"
   runtime       = "python10"
