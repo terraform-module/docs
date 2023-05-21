@@ -26,7 +26,7 @@ module "ecs" {
   source  = "terraform-module/ecs/aws"
   version = "1.0.2"
 
-  name = "example"
+  name               = "example"
   capacity_providers = ["FARGATE_SPOT"]
   default_capacity_provider_strategy = [
     {
@@ -50,6 +50,19 @@ module "ecs-bootstrap" {
   name_prefix  = "ext-"
   vpc_id       = "vpc-323eb3a0"
   subnets      = ["sbu-2345k8c"]
+
+  lb = {
+    create = "true"
+    port   = "80"
+    health_check = {
+      path = "/healthz"
+    }
+    listener_arn = "arn:aws:elasticloadbalancing:eu-west-1:033338980111:listener/app/k8s-internal"
+    priority     = 1
+    lb_rules = {
+      host_headers = ["www", "api", "auth", "admin"]
+    }
+  }
 }
 
 module "ecs-instance-profile" {
@@ -97,7 +110,7 @@ module "kms" {
   alias_name  = "parameter_store_key"
   description = "Key to encrypt and decrypt secrets"
 
-  tags = tomap({"used_by" = "chamber", "created_by" = "terraform"})
+  tags = tomap({ "used_by" = "chamber", "created_by" = "terraform" })
 }
 
 # HElm provider. Not a great idea to use it. Helm is way better
@@ -117,7 +130,7 @@ module "helm-release" {
     deploy        = 1
   }
 
-  namespace  = "default"
+  namespace = "default"
 }
 
 module "velero" {

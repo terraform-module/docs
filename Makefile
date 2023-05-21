@@ -24,7 +24,7 @@ init: ## Test diff
 	@terraform init
 
 format: ## Terraform format
-	@terraform format
+	@terraform fmt
 
 cleanup: ## Clean resources
 	@find . -type d -name ".terraform" -prune -exec rm -rf {} \;
