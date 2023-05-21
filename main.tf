@@ -80,6 +80,9 @@ module "kms" {
 module "helm-release" {
   source = "terraform-module/release/helm"
   # insert the 3 required variables here
+  repository = "https://github.com/terraform-module/docs"
+  app        = "example"
+  namespace  = "default"
 }
 
 module "velero" {
