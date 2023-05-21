@@ -73,6 +73,7 @@ module "dns" {
   # insert the 3 required variables here
   subdomain            = ""
   parent_dns_zone_name = ""
+  parent_dns_zone_id   = "42d37a58-f7ad-11ed-a94d-b71410c04d86"
 }
 
 module "kms" {
