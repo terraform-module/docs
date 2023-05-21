@@ -25,7 +25,16 @@ module "ecrs" {
 module "ecs" {
   source  = "terraform-module/ecs/aws"
   version = "1.0.2"
-  # insert the 1 required variable here
+
+  name = "example"
+  capacity_providers = ["FARGATE_SPOT"]
+  default_capacity_provider_strategy = [
+    {
+      capacity_provider = "FARGATE_SPOT"
+    }
+  ]
+
+  tags = merge({ module = "terraform-module/ecs/aws" })
 }
 
 module "enforce-mfa" {
@@ -97,9 +106,18 @@ module "helm-release" {
   source = "terraform-module/release/helm"
   # insert the 3 required variables here
   repository = "https://github.com/terraform-module/docs"
-  app        = "example"
-  namespace  = "default"
 
+  app = {
+    name          = "nginx"
+    version       = "2.2.0"
+    chart         = "nginx"
+    force_update  = true
+    wait          = false
+    recreate_pods = false
+    deploy        = 1
+  }
+
+  namespace  = "default"
 }
 
 module "velero" {
