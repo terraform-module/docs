@@ -44,7 +44,15 @@ module "ecs-instance-profile" {
 
 module "lambda" {
   source = "terraform-module/lambda/aws"
-  # insert the 14 required variables here
+
+  function_name = "example"
+  handler       = "index.handler"
+  memory_size   = "128"
+  filename       = "lambda.zip"
+  description   = "example"
+  role_arn      = "arn:aws:lambda:us-east-1:123456789012:function:example_lambda"
+  runtime       = "python10"
+  concurrency   = 1
 }
 
 module "gitlab-oidc-provider" {
