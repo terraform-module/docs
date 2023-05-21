@@ -40,6 +40,7 @@ module "ecs-bootstrap" {
 module "ecs-instance-profile" {
   source = "terraform-module/ecs-instance-profile/aws"
   # insert the 1 required variable here
+  name = "example"
 }
 
 module "lambda" {
