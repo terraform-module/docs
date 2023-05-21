@@ -88,7 +88,7 @@ module "kms" {
   alias_name  = "parameter_store_key"
   description = "Key to encrypt and decrypt secrets"
 
-  tags = tomap("USED_BY", "chamber")
+  tags = tomap({"used_by" = "chamber", "created_by" = "terraform"})
 }
 
 # HElm provider. Not a great idea to use it. Helm is way better
