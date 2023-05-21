@@ -67,7 +67,7 @@ module "dns" {
 }
 
 module "kms" {
-  source = "terraform-module/dns/aws"
+  source = "terraform-module/kms/aws"
 
   alias_name  = "parameter_store_key"
   description = "Key to encrypt and decrypt secrets"
