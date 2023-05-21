@@ -38,6 +38,9 @@ module "ecs-bootstrap" {
   name         = "example"
   cluster_id   = "4f901e4f4ef0"
   cluster_name = "dev-cluster"
+  name_prefix   = "ext-"
+  vpc_id       = "vpc-323eb3a0"
+  subnets      = "sbu-2345k8c"
 }
 
 module "ecs-instance-profile" {
