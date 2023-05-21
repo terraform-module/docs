@@ -40,7 +40,7 @@ module "ecs-bootstrap" {
   cluster_name = "dev-cluster"
   name_prefix  = "ext-"
   vpc_id       = "vpc-323eb3a0"
-  subnets      = "sbu-2345k8c"
+  subnets      = ["sbu-2345k8c"]
 }
 
 module "ecs-instance-profile" {
@@ -88,7 +88,7 @@ module "kms" {
   alias_name  = "parameter_store_key"
   description = "Key to encrypt and decrypt secrets"
 
-  tags = map("USED_BY", "chamber")
+  tags = tomap("USED_BY", "chamber")
 }
 
 # HElm provider. Not a great idea to use it. Helm is way better
