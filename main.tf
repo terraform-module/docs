@@ -34,7 +34,10 @@ module "enforce-mfa" {
 
 module "ecs-bootstrap" {
   source = "terraform-module/ecs-bootstrap/aws"
-  # insert the 6 required variables here
+
+  name         = "example"
+  cluster_id   = "4f901e4f4ef0"
+  cluster_name = "dev-cluster"
 }
 
 module "ecs-instance-profile" {
