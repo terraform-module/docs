@@ -24,7 +24,7 @@ module "ecrs" {
 
 module "ecs" {
   source  = "terraform-module/ecs/aws"
-  version = "1.0.1"
+  version = "1.0.2"
   # insert the 1 required variable here
 }
 
