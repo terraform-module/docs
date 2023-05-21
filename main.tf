@@ -94,6 +94,11 @@ module "helm-release" {
   app        = "example"
   namespace  = "default"
 
+}
+
+module "velero" {
+  source = "terraform-module/velero/kubernetes"
+  # insert the 5 required variables here
   cluster_name                = "dev-cluster"
   openid_connect_provider_uri = "openid-configuration"
   bucket                      = "backup-s3"
@@ -102,10 +107,5 @@ module "helm-release" {
     # https://github.com/terraform-module/terraform-kubernetes-velero
   EOF
   ]
-}
-
-module "velero" {
-  source = "terraform-module/velero/kubernetes"
-  # insert the 5 required variables here
 }
 
