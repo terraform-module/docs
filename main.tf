@@ -92,6 +92,15 @@ module "helm-release" {
   repository = "https://github.com/terraform-module/docs"
   app        = "example"
   namespace  = "default"
+
+  cluster_name                = "dev-cluster"
+  openid_connect_provider_uri = "openid-configuration"
+  bucket                      = "backup-s3"
+
+  values = [<<EOF
+    # https://github.com/terraform-module/terraform-kubernetes-velero
+  EOF
+  ]
 }
 
 module "velero" {
