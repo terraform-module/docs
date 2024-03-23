@@ -21,7 +21,7 @@ jobs:
       - uses: hashicorp/setup-terraform@v2.0.3
 
       - name: Cache terraform folder
-        uses: actions/cache@v3.3.3
+        uses: actions/cache@v4.0.2
         with:
           path: ./.terraform
           key: terraform
